@@ -41,6 +41,7 @@ preprocessAPK() {
     ${DARE} -d ${dareDir} ${apkFile}
     jar cf ${extractedApkDir}/classes.jar -C ${dareDir}/retargeted/${appName} .
     rm -r ${dareDir}
+    $(dirname $0)/gator-exporter/rungator.sh ${apkFile} ${apkDir}/gator
 }
 
 preprocessAPKDir() {
